@@ -1,0 +1,12 @@
+accounts:
+  - name: alice
+    coins: ["1000token", "100000000stake"]
+  - name: bob
+    coins: ["500token"]
+validator:
+  name: alice
+  staked: "100000000stake"
+servers:
+  api-address: "163.117.140.25:1317"
+  rpc-address: "163.117.140.25:26657"
+  frontend-address: "163.117.140.25:8080"

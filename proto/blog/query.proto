@@ -1,0 +1,39 @@
+syntax = "proto3";
+package example.blog.blog;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+// this line is used by starport scaffolding # 1
+import "blog/user.proto";
+
+option go_package = "github.com/example/blog/x/blog/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // this line is used by starport scaffolding # 2
+	rpc User(QueryGetUserRequest) returns (QueryGetUserResponse) {
+		option (google.api.http).get = "/example/blog/blog/user/{id}";
+	}
+	rpc UserAll(QueryAllUserRequest) returns (QueryAllUserResponse) {
+		option (google.api.http).get = "/example/blog/blog/user";
+	}
+
+}
+
+// this line is used by starport scaffolding # 3
+message QueryGetUserRequest {
+	string id = 1;
+}
+
+message QueryGetUserResponse {
+	User User = 1;
+}
+
+message QueryAllUserRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllUserResponse {
+	repeated User User = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

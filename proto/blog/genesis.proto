@@ -1,0 +1,14 @@
+syntax = "proto3";
+package example.blog.blog;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "blog/user.proto";
+
+option go_package = "github.com/example/blog/x/blog/types";
+
+// GenesisState defines the capability module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+		repeated User userList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+}
+

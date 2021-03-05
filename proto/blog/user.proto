@@ -1,0 +1,28 @@
+syntax = "proto3";
+package example.blog.blog;
+
+option go_package = "github.com/example/blog/x/blog/types";
+
+import "gogoproto/gogo.proto";
+
+message User {
+  string creator = 1;
+  string id = 2;
+  string name = 3; 
+}
+
+message MsgCreateUser {
+  string creator = 1;
+  string name = 2; 
+}
+
+message MsgUpdateUser {
+  string creator = 1;
+  string id = 2;
+  string name = 3; 
+}
+
+message MsgDeleteUser {
+  string creator = 1;
+  string id = 2;
+}
